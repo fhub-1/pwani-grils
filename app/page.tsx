@@ -24,7 +24,7 @@ export default function Home() {
 
   // Use useEffect to change the background image at a specific interval
   useEffect(() => {
-    const intervalId = setInterval(changeBackgroundImage, 5000); // Change image every 5 seconds (adjust as needed)
+    const intervalId = setInterval(changeBackgroundImage, 3000); // Change image every 5 seconds (adjust as needed)
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
