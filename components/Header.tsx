@@ -8,15 +8,17 @@ import Container from "./ui/container";
 import { useTheme } from "next-themes";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import classNames from "classnames";
 // nav links
 
 const routes = [
   {
-    href: "/",
+    href: "/about",
     label: "About Us",
   },
   {
-    href: "/",
+    href: "/codehack",
     label: "Codehack",
   },
   {
@@ -24,17 +26,20 @@ const routes = [
     label: "Programs",
   },
   {
-    href: "/",
+    href: "",
     label: "Way to give",
   },
   {
-    href: "/",
+    href: "",
     label: "Connect",
   },
 ];
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
+  const currentPath = usePathname();
+  console.log(currentPath);
+
   return (
     <header className="sm:flex sm:justify-between py-3 px-4 border-b">
       <Container>
@@ -50,7 +55,13 @@ export default function Header() {
                     <Link
                       key={i}
                       href={route.href}
-                      className="block px-2 py-1 text-lg font-semibold uppercase"
+                      className={classNames({
+                        "text-pink-400 underline font-semibold":
+                          currentPath === route.href,
+                        "text-sm font-medium transition-colors md:font-semibold text-gray-400":
+                          currentPath !== route.href,
+                        "hover:text-primary-500": currentPath !== route.href,
+                      })}
                     >
                       {route.label}
                     </Link>
@@ -64,11 +75,17 @@ export default function Header() {
           </div>
           <nav className="mx-6  items-center space-x-4 lg:space-x-6 hidden md:block">
             {routes.map((route, i) => (
-              <Button asChild variant="ghost">
+              <Button asChild variant="link">
                 <Link
                   key={i}
                   href={route.href}
-                  className="text-sm font-medium transition-colors md:font-semibold"
+                  className={classNames({
+                    "text-pink-500 underline font-semibold":
+                      currentPath === route.href,
+                    "text-sm font-medium transition-colors md:font-semibold text-gray-400":
+                      currentPath !== route.href,
+                    "hover:text-primary-500": currentPath !== route.href,
+                  })}
                 >
                   {route.label}
                 </Link>
@@ -90,8 +107,7 @@ export default function Header() {
             <Button
               variant="default"
               size="lg"
-              className="mr-2"
-              aria-label="shopping cart"
+              className="mr-2 bg-pink-500 hover:bg-pink-300"
             >
               Donnate
             </Button>

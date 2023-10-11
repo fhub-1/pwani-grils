@@ -32,3 +32,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+    <Container>
+
+{/\* <div className="space-y-10 pb-10">
+
+<div className="p-4 sm:p-6 lg:p-8 rounded-lg overflow-hidden">
+<div
+// style={{ backgroundImage: `url(/img/joan-edited.jpeg)` }}
+style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+className="rounded-lg relative aspect-square md:aspect-[2.4/1] overflow-hidden bg-cover" >
+<div className="h-full w-full flex flex-col justify-center items-center text-center gap-y-8">
+<div className="font-bold text-3xl sm:text-5xl lg:text-3xl sm:max-w-xl max-w-xs text-black dark:text-white bg-secondary/60 p-4 rounded-lg">
+We are nurturing the next generation of girls in STEM
+<Button size="lg" className="w-full py-6 text-xl">
+<PlusCircle className="mr-2" />
+Join Now
+</Button>
+</div>
+</div>
+</div>
+</div>
+
+      </div> */}
+
+          {/* </Container> */}
